@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --color-primary: #A52A2A;
+  --color-accent: #D4AF37;
+  --color-background: #F5F2ED;
+  --color-text: #2D241E;
+  --color-muted: #7A6B5D;
+  --color-border: #E6E0D4;
+}
+
+@layer utilities {
+  .tibetan-border {
+    border-style: solid;
+    border-width: 4px;
+    border-image: linear-gradient(to bottom, #A52A2A, #D4AF37) 1;
+  }
+  
+  .pattern-endless-knot {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5l5 5h-10l5-5zm10 10l5 5-5 5v-10zm-20 0l-5 5 5 5v-10zm10 20l-5-5h10l-5 5z' fill='%23A52A2A' fill-opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .animate-spin-slow {
+    animation: spin 60s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+body {
+  @apply antialiased selection:bg-[#800000] selection:text-white;
+}
